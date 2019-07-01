@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DengluActivity"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:id="@+id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="150dp">
+        <!--输入框-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx1"
+            android:text="用户名："
+            android:textSize="22sp"
+            android:textColor="#030303"
+
+            />
+        <EditText
+            android:id="@+id/username"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_width="0dp"
+            android:singleLine="true"
+            android:hint="请输入您的用户名"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/a2"
+        android:layout_below="@+id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--输入框-->
+        <TextView
+            android:id="@+id/m1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="密码："
+            android:textSize="22sp"
+            android:textColor="#030303"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_below="@id/a1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:inputType="number"
+            android:hint="请输入您的密码"
+            android:singleLine="true"
+            android:ems="10"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="登录"/>
+
+    <LinearLayout
+        android:layout_below="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="注册"
+            />
+        <Button
+            android:id="@+id/Forgot"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

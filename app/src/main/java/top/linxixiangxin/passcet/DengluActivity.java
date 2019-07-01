@@ -6,19 +6,22 @@ package top.linxixiangxin.passcet;
         import android.view.View;
         import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    private Button asd;
+public class DengluActivity extends AppCompatActivity {
+    private Button btn_log,btn_reg,btn_fot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_denglu);
 
-        asd=findViewById(R.id.as);
-        asd.setOnClickListener(new View.OnClickListener() {
+        btn_log=findViewById(R.id.login);
+        btn_reg=findViewById(R.id.register);
+        btn_fot=findViewById(R.id.Forgot);
+
+        btn_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                Intent intent = new Intent(DengluActivity.this,ZhuceActivity.class);
                 startActivity(intent);
             }
         });
