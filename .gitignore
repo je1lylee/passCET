@@ -11,4 +11,8 @@
 /build
 /captures
 .externalNativeBuild
+<<<<<<< HEAD
 build.gradle
+=======
+.gitignore
+>>>>>>> 40dc58cee3e64567133df12be62daf12a7df8649
