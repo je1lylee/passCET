@@ -14,11 +14,13 @@ public class DengluActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denglu);
 
-        btn_log=findViewById(R.id.login);
-        btn_reg=findViewById(R.id.register);
-        btn_fot=findViewById(R.id.Forgot);
+        //绑定id-s
+        btn_log=findViewById(R.id.login);  //登录按钮
+        btn_reg=findViewById(R.id.register);  //注册按钮
+        btn_fot=findViewById(R.id.Forgot);  //忘记密码按钮
 
-        btn_log.setOnClickListener(new View.OnClickListener() {
+        //注册按钮的点击事件
+        btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DengluActivity.this,ZhuceActivity.class);

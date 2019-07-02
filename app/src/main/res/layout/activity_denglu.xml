@@ -82,9 +82,10 @@
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/login"
             android:layout_weight="1"
-            android:text="注册"
-            />
+            android:text="注册" />
         <Button
             android:id="@+id/Forgot"
             android:layout_weight="1"
