@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="top.linxixiangxin.passcet.Zhuce2Activity"
+    android:background="@drawable/zc2_bj"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+
+        <Button
+            android:id="@+id/zc2_x"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/x"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/zc2_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:background="@drawable/zc2_tx"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="请输入您的昵称"
+            android:theme="@style/MyEditText"
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/zc2_1"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="1"
+        >
+
+        <Button
+            android:id="@+id/zc_finish"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zhucebeijing1"
+            android:text="注册"
+            android:textSize="19sp"
+            android:textColor="#f5f3f3"/>
+
+        <Button
+            android:id="@+id/zc2_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="返回"
+            android:textSize="19sp"
+            android:textColor="#f4f4f4"
+            android:background="#00000000"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>

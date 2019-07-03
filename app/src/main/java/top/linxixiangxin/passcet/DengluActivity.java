@@ -17,13 +17,20 @@ public class DengluActivity extends AppCompatActivity {
         //绑定id-s
         btn_log=findViewById(R.id.login);  //登录按钮
         btn_reg=findViewById(R.id.register);  //注册按钮
-        btn_fot=findViewById(R.id.Forgot);  //忘记密码按钮
 
         //注册按钮的点击事件
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DengluActivity.this,ZhuceActivity.class);
+                Intent intent = new Intent(DengluActivity.this,Zhuce1Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DengluActivity.this,Study1Activity.class);
                 startActivity(intent);
             }
         });

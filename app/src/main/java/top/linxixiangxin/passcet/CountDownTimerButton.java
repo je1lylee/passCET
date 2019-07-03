@@ -19,7 +19,7 @@ public class CountDownTimerButton extends Button implements View.OnClickListener
     private long duration = 60000;//倒计时时长 设置默认60秒
     private long temp_duration;
     private String clickBeffor = "倒计时开始";//点击前
-    private String clickAfter = "秒后重新开始";//点击后
+    private String clickAfter = "s";//点击后
 
     public CountDownTimerButton(Context context) {
         super(context);
