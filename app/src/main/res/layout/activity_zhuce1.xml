@@ -19,7 +19,7 @@
         >
 
         <EditText
-            android:id="@+id/zc_mail"
+            android:id="@+id/edit_zc1_mail"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
@@ -28,7 +28,7 @@
             android:theme="@style/MyEditText"/>
 
         <top.linxixiangxin.passcet.CountDownTimerButton
-            android:id="@+id/zc_send"
+            android:id="@+id/btn_zc1_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -49,7 +49,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/zc_yzm"
+            android:id="@+id/edit_zc1_yzm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入您的密码"
@@ -62,7 +62,7 @@
 
 
     <Button
-        android:id="@+id/zc_sure"
+        android:id="@+id/btn_zc1_sure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"

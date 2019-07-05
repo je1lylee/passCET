@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Zhuce2Activity extends AppCompatActivity {
-    private Button x,back,finish;
+    private Button btn_zc2_x,btn_zc2_back,btn_zc_finish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,12 +15,11 @@ public class Zhuce2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_zhuce2);
 
         //绑定id
+        btn_zc2_back=findViewById(R.id.btn_zc2_back);  //返回上一层
+        btn_zc_finish=findViewById(R.id.btn_zc_finish);//进入主页面
+        btn_zc2_x=findViewById(R.id.btn_zc2_x);//返回登录页
 
-        back=findViewById(R.id.zc2_back);
-        finish=findViewById(R.id.zc_finish);
-        x=findViewById(R.id.zc2_x);
-
-        x.setOnClickListener(new View.OnClickListener() {
+        btn_zc2_x.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Zhuce2Activity.this,DengluActivity.class);
@@ -28,7 +27,7 @@ public class Zhuce2Activity extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
+        btn_zc2_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Zhuce2Activity.this,Zhuce1Activity.class);
@@ -36,7 +35,7 @@ public class Zhuce2Activity extends AppCompatActivity {
             }
         });
 
-        finish.setOnClickListener(new View.OnClickListener() {
+        btn_zc_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Zhuce2Activity.this,Study1Activity.class);

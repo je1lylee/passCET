@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 public class Zhuce1Activity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button sure;
-    private EditText email, username, yzm, password, passwordagain;
-    private CountDownTimerButton send;
+    private Button btn_zc1_sure;
+    private EditText edit_zc1_mail, edit_zc1_yzm;
+    private CountDownTimerButton btn_zc1_send;
 
 
     @Override
@@ -21,13 +21,13 @@ public class Zhuce1Activity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_zhuce1);
 
         //绑定id-S
-        send = findViewById(R.id.zc_send);  //发送验证码
-        email = findViewById(R.id.zc_mail); //输入邮箱地址
-        yzm = findViewById(R.id.zc_yzm);  //输入的验证码
-        sure=findViewById(R.id.zc_sure);
+        btn_zc1_send = findViewById(R.id.btn_zc1_send);  //发送验证码
+        edit_zc1_mail = findViewById(R.id.edit_zc1_mail); //输入邮箱地址
+        edit_zc1_yzm = findViewById(R.id.edit_zc1_yzm);  //输入的验证码
+        btn_zc1_sure=findViewById(R.id.btn_zc1_sure);
 
         //确认注册后的点击事件
-        sure.setOnClickListener(new View.OnClickListener() {
+        btn_zc1_sure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Zhuce1Activity.this,Zhuce2Activity.class);

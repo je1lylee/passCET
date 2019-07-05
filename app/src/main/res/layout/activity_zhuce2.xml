@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,12 +17,12 @@
         >
 
         <Button
-            android:id="@+id/zc2_x"
+            android:id="@+id/btn_zc2_x"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/x"/>
+            android:background="@drawable/zc2_x"/>
 
 
     </LinearLayout>
@@ -31,11 +32,12 @@
         android:id="@+id/zc2_1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.2"
+        android:layout_weight="3"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_zc2_tx"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="center"
@@ -43,6 +45,7 @@
             />
 
         <EditText
+            android:id="@+id/edit_zc2_nc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
@@ -68,7 +71,7 @@
         >
 
         <Button
-            android:id="@+id/zc_finish"
+            android:id="@+id/btn_zc_finish"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +81,7 @@
             android:textColor="#f5f3f3"/>
 
         <Button
-            android:id="@+id/zc2_back"
+            android:id="@+id/btn_zc2_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="top.linxixiangxin.passcet.Study1Activity">
+    tools:context="top.linxixiangxin.passcet.Study1Activity"
+    android:background="@drawable/study1_bj">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/st_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/stu1_tx"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/study1_tx"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/study1_ed"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="在此输入单词"
+                android:textSize="15sp"
+                android:textColorHint="#fff"
+                android:cursorVisible="false"
+                android:lines="1"
+                android:maxLength="15"
+                android:layout_gravity="center"
+                android:background="@null"/>
+
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/study1_ss"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/st_1"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/study_ds"
+            android:layout_width="275dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/st_1"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/study1_ds" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

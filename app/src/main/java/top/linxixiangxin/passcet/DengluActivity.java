@@ -15,8 +15,8 @@ public class DengluActivity extends AppCompatActivity {
         setContentView(R.layout.activity_denglu);
 
         //绑定id-s
-        btn_log=findViewById(R.id.login);  //登录按钮
-        btn_reg=findViewById(R.id.register);  //注册按钮
+        btn_log=findViewById(R.id.btn_denglu_login);  //登录按钮
+        btn_reg=findViewById(R.id.btn_denglu_register);  //注册按钮
 
         //注册按钮的点击事件
         btn_reg.setOnClickListener(new View.OnClickListener() {
