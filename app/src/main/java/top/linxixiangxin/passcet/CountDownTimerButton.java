@@ -10,7 +10,7 @@ import android.widget.Button;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CountDownTimerButton extends Button implements View.OnClickListener {
+public class CountDownTimerButton extends android.support.v7.widget.AppCompatButton implements View.OnClickListener {
 
     private Context mContext;
     private OnClickListener mOnClickListener;
