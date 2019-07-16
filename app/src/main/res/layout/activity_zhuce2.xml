@@ -54,7 +54,6 @@
             android:gravity="center"
             android:hint="请输入您的昵称"
             android:theme="@style/MyEditText"
-
             />
 
     </LinearLayout>

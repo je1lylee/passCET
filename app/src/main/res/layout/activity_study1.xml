@@ -42,7 +42,7 @@
         android:layout_marginTop="80dp">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="290dp"
             android:layout_height="150dp"
             android:background="@drawable/study1_ds"
             android:layout_centerInParent="true"
@@ -61,25 +61,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_learn_bg"
+        android:id="@+id/t1"
         >
 
         <RelativeLayout
+            android:id="@+id/card_R"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="280dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="26dp"
             android:layout_marginVertical="10dp"
-            android:background="@drawable/bg_card"
-            >
+            android:background="@drawable/bg_card">
 
             <TextView
                 android:id="@+id/tv_card_word_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="pass"
-                android:textSize="25sp"
-                android:textColor="#080808"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginLeft="20dp"/>
+                android:text="pass"
+                android:textColor="#080808"
+                android:textSize="25sp" />
 
             <ImageView
                 android:id="@+id/imv_read_uk"
@@ -88,7 +92,8 @@
                 android:layout_below="@+id/tv_card_word_name"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/dy"/>
+                android:src="@drawable/dy" />
+
             <TextView
                 android:id="@+id/tv_read_uk"
                 android:layout_width="wrap_content"
@@ -97,31 +102,53 @@
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/imv_read_uk"
                 android:text="英/pa:s/"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
+
             <ImageView
                 android:id="@+id/imv_read_usa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_card_word_name"
-                android:layout_toRightOf="@+id/tv_read_uk"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/dy"/>
+                android:layout_toRightOf="@+id/tv_read_uk"
+                android:src="@drawable/dy" />
+
             <TextView
                 android:id="@+id/tv_read_usa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_card_word_name"
-                android:layout_toRightOf="@+id/imv_read_usa"
                 android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/imv_read_usa"
                 android:text="美/pa:s/"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
         </RelativeLayout>
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_R"
+        tools:ignore="NotSibling">
+        <LinearLayout
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+        <com.ashokvarma.bottomnavigation.BottomNavigationBar
+            android:id="@+id/bottom_navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:background="#efecec"/>
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
