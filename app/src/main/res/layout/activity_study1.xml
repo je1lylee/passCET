@@ -39,11 +39,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="60dp">
 
-        <ImageView
-            android:layout_width="290dp"
-            android:layout_height="150dp"
+        <ImageButton
+            android:id="@+id/st1_imgbt"
+            android:layout_width="260dp"
+            android:layout_height="170dp"
             android:background="@drawable/study1_ds"
             android:layout_centerInParent="true"
             />
@@ -53,8 +54,17 @@
             android:text="定时学习"
             android:textColor="#ddd"
             android:textSize="16sp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="130dp"
             android:layout_centerHorizontal="true"/>
+
+        <Spinner
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_below="@id/st1_imgbt"
+            >
+        </Spinner>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -67,13 +77,23 @@
         <RelativeLayout
             android:id="@+id/card_R"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="320dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="40dp"
             android:layout_marginVertical="10dp"
-            android:background="@drawable/bg_card">
+            android:background="@drawable/bg_card"
+            >
+
+            <Button
+                android:id="@+id/study1_bt_tianjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="添加到生词库"
+                android:background="@drawable/study1_btn_sc"/>
+
 
             <TextView
                 android:id="@+id/tv_card_word_name"

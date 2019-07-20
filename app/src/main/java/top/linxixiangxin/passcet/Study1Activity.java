@@ -3,10 +3,11 @@ package top.linxixiangxin.passcet;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-
+//导航栏
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -14,20 +15,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-
 import Fragment.SC;
 import Fragment.XUEXI;
 import Fragment.ZXJ;
 
 
+//下拉框
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
 public class Study1Activity extends Activity implements BottomNavigationBar.OnTabSelectedListener {
 
+    //导航栏
     private BottomNavigationBar bottomNavigationBar;
     int lastSelectedPosition = 0;
     private String TAG = Study1Activity.class.getSimpleName();
     private XUEXI xuexiFragment;
     private ZXJ zxjFragment;
     private SC scFragment;
+
+
+    private Button study1_bt_tianjia;
+    private Boolean b_sub_square = false;
 
 
     @Override
@@ -41,6 +53,36 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         }
         setContentView(R.layout.activity_study1);
 
+        study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
+        study1_bt_tianjia.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!b_sub_square) {
+                   b_sub_square = true;
+                   //设置是否被激活状态，true表示被激    
+                   study1_bt_tianjia.setActivated(b_sub_square);
+                   study1_bt_tianjia.setText("已加入生词");
+               } else {
+                   b_sub_square = false;
+                   //设置是否被激活状态，false表示未激活
+                   study1_bt_tianjia.setActivated(b_sub_square);
+
+                   study1_bt_tianjia.setText("添加到生词库");
+               }
+
+           }
+
+        });
+
+
+        //下拉框
+        String[] ctype = new String[]{"CET_4","CET_6"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);  //创建一个数组适配器
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
+        Spinner spinner = super.findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
+
+        //导航栏
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         /** 导航基础设置 包括按钮选中效果 导航栏背景色等 */
