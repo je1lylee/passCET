@@ -6,8 +6,6 @@ import android.os.Bundle;
 //导航栏
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -17,14 +15,10 @@ import Fragment.ZXJ;
 
 
 //下拉框
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-public class YiBeiActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
+public class YibeiActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     //导航栏
     private BottomNavigationBar bottomNavigationBar;
@@ -40,7 +34,7 @@ public class YiBeiActivity extends AppCompatActivity implements BottomNavigation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_yi_bei);
+        setContentView(R.layout.activity_yibei);
 
 
         //下拉框1

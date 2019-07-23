@@ -1,18 +1,11 @@
 package top.linxixiangxin.passcet;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 //导航栏
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -22,14 +15,10 @@ import Fragment.ZXJ;
 
 
 //下拉框
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-public class Study1Activity extends Activity implements BottomNavigationBar.OnTabSelectedListener {
+public class ShengciActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     //导航栏
     private BottomNavigationBar bottomNavigationBar;
@@ -40,64 +29,29 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
     private SC scFragment;
 
 
-    private Button study1_bt_tianjia;
-    private Boolean b_sub_square = false;
-    private TextView study1_tx_yb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT) {
-            //透明状态栏
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //透明导航栏
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        }
-        setContentView(R.layout.activity_study1);
+        setContentView(R.layout.activity_yibei);
 
 
-        //绑定id
-        study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
-        study1_tx_yb=findViewById(R.id.study1_tx_yb);
+        //下拉框1
+        String[] ctype4 = new String[]{"CET_4","CET_6"};
+        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype4);  //创建一个数组适配器
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
+        Spinner spinner4 = super.findViewById(R.id.shengci_choose);
+        spinner4.setAdapter(adapter4);
+
+        //下拉框2
+        String[] ctype3 = new String[]{"新旧排序","旧新排序","A-Z排序","Z-A排序"};
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype3);  //创建一个数组适配器
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
+        Spinner spinner3 = super.findViewById(R.id.shengci_paixu);
+        spinner3.setAdapter(adapter3);
 
 
-
-
-        study1_bt_tianjia.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               if (!b_sub_square) {
-                   b_sub_square = true;
-                   //设置是否被激活状态，true表示被激    
-                   study1_bt_tianjia.setActivated(b_sub_square);
-                   study1_bt_tianjia.setText("已加入生词");
-               } else {
-                   b_sub_square = false;
-                   //设置是否被激活状态，false表示未激活
-                   study1_bt_tianjia.setActivated(b_sub_square);
-
-                   study1_bt_tianjia.setText("添加到生词库");
-               }
-
-           }
-
-        });
-
-        study1_tx_yb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Study1Activity.this,YibeiActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        //下拉框
-        String[] ctype = new String[]{"CET_4","CET_6"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);  //创建一个数组适配器
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
-        Spinner spinner = super.findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
 
         //导航栏
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);

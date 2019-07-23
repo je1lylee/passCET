@@ -19,7 +19,8 @@
         <activity android:name=".Zhuce1Activity" />
         <activity android:name=".Zhuce2Activity" />
         <activity android:name=".Study1Activity" />
-        <activity android:name=".YiBeiActivity"></activity>
+        <activity android:name=".YiBeiActivity" />
+        <activity android:name=".ShengciActivity"></activity>
     </application>
 
 </manifest>
