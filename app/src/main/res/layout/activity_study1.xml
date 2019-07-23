@@ -143,19 +143,29 @@
                 android:layout_toRightOf="@+id/imv_read_usa"
                 android:text="美/pa:s/"
                 android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/study1_tx_yb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:text="查看已背单词"/>
         </RelativeLayout>
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/card_R"
-        tools:ignore="NotSibling">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:ignore="NotSibling"
+        android:layout_below="@id/t1">
+
         <LinearLayout
             android:id="@+id/tb"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:orientation="horizontal">
 
 
@@ -164,9 +174,9 @@
         <com.ashokvarma.bottomnavigation.BottomNavigationBar
             android:id="@+id/bottom_navigation_bar"
             android:layout_width="match_parent"
-            android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"
-            android:background="#efecec"/>
+            android:layout_alignParentBottom="true"
+            android:background="#efecec" />
 
     </RelativeLayout>
 
