@@ -16,3 +16,6 @@ build.gradle
 =======
 .gitignore
 >>>>>>> 40dc58cee3e64567133df12be62daf12a7df8649
+.idea/gradle.xml
+gradle/wrapper/gradle-wrapper.properties
+build.gradle
