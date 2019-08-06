@@ -1,33 +1,32 @@
 package top.linxixiangxin.passcet;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-
-//导航栏
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import Fragment.SC;
-import Fragment.XUEXI;
-import Fragment.ZXJ;
-
-
-//下拉框
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+
+import Fragment.SC;
+import Fragment.XUEXI;
+import Fragment.ZXJ;
+import card.CardGroupView;
+
+//导航栏
+//下拉框
+//卡片
 
 public class Study1Activity extends Activity implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -38,6 +37,9 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
     private XUEXI xuexiFragment;
     private ZXJ zxjFragment;
     private SC scFragment;
+
+
+    private CardGroupView mCardGroupView;
 
 
     private Button study1_bt_tianjia;
@@ -54,12 +56,15 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_study1);
+        initView();
+        initEvent();
+        addCard();
 
 
         //绑定id
-        study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
-        study1_tx_yb=findViewById(R.id.study1_tx_yb);
 
+        study1_tx_yb=findViewById(R.id.study1_tx_yb);
+        study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
 
 
 
@@ -204,5 +209,61 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+
+    private void initView() {
+        mCardGroupView = (CardGroupView) findViewById(R.id.card);
+        mCardGroupView.setLoadSize(3);
+        mCardGroupView.setMargin(0.15);
+    }
+
+    private void initEvent() {
+        mCardGroupView.setLoadMoreListener(new CardGroupView.LoadMore() {
+            @Override
+            public void load() {
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+                mCardGroupView.addView(getCard());
+            }
+        });
+        mCardGroupView.setLeftOrRightListener(new CardGroupView.LeftOrRight() {
+            @Override
+            public void leftOrRight(boolean left) {
+                if (left) {
+                    Toast.makeText(Study1Activity.this, "向左滑喜欢！", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Study1Activity.this, "向右滑不喜欢！", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void addCard() {
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+        mCardGroupView.addView(getCard());
+    }
+
+    private View getCard() {
+        View card = LayoutInflater.from(this).inflate(R.layout.activity_cardstyle, null);
+        View view = card.findViewById(R.id.remove);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCardGroupView.removeTopCard(true);
+            }
+        });
+        return card;
     }
 }
