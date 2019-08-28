@@ -7,9 +7,6 @@
     tools:context="top.linxixiangxin.passcet.Study1Activity"
     android:background="@drawable/study1_bj">
 
-
-
-
     <Button
         android:id="@+id/cmg_learn_user_header"
         android:layout_width="40dp"
@@ -34,6 +31,8 @@
         android:paddingLeft="15dp"
         android:textCursorDrawable="@drawable/color_cursor"
         android:textSize="12sp"/>
+
+
     <RelativeLayout
         android:id="@+id/rl_learn_bg"
         android:layout_width="match_parent"
@@ -58,9 +57,10 @@
             android:layout_centerHorizontal="true"/>
 
         <Spinner
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+
             android:id="@+id/spinner"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/st1_imgbt"
             >
         </Spinner>
@@ -73,27 +73,34 @@
         android:layout_below="@id/rl_learn_bg"
         android:id="@+id/t1"
         >
-            <card.CardGroupView
-                android:id="@+id/card"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_gravity="bottom"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="30dp"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingStart="@dimen/card_padding" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         tools:ignore="NotSibling"
-        android:layout_below="@id/t1">
+        >
 
         <LinearLayout
             android:id="@+id/tb"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
-
-
         </LinearLayout>
 
         <com.ashokvarma.bottomnavigation.BottomNavigationBar
@@ -101,8 +108,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="#efecec" />
-
+            android:background="#72ed95"
+            />
     </RelativeLayout>
 
 

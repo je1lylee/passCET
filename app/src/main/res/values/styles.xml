@@ -15,4 +15,10 @@
         <item name="colorControlActivated">@android:color/holo_blue_dark</item>
     </style>
 
+
+    <style name="ButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+
 </resources>
