@@ -7,11 +7,76 @@
         tools:context="top.linxixiangxin.passcet.Study1Activity"
     >
 
+<<<<<<< HEAD
     <LinearLayout
+=======
+
+
+
+    <Button
+        android:id="@+id/cmg_learn_user_header"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/zc2_tx"
+        />
+
+    <EditText
+        android:id="@+id/et__learn_search"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_corners_find"
+        android:drawableRight="@drawable/study1_ss"
+        android:drawablePadding="12dp"
+        android:hint="在此输入单词"
+        android:lines="1"
+        android:paddingLeft="15dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="12sp"/>
+    <RelativeLayout
+        android:id="@+id/rl_learn_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="60dp">
+
+        <ImageButton
+            android:id="@+id/st1_imgbt"
+            android:layout_width="260dp"
+            android:layout_height="170dp"
+            android:background="@drawable/study1_ds"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定时学习"
+            android:textColor="#ddd"
+            android:textSize="16sp"
+            android:layout_marginTop="130dp"
+            android:layout_centerHorizontal="true"/>
+
+        <Spinner
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_below="@id/st1_imgbt"
+            >
+        </Spinner>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+>>>>>>> parent of dbcdb43... 卡片的更新
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+<<<<<<< HEAD
 
         <android.support.v4.view.ViewPager
             android:id="@+id/contentView"
@@ -58,6 +123,39 @@
         </RadioGroup>
 
     </LinearLayout>
+=======
+            <card.CardGroupView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:ignore="NotSibling"
+        android:layout_below="@id/t1">
+
+        <LinearLayout
+            android:id="@+id/tb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+        <com.ashokvarma.bottomnavigation.BottomNavigationBar
+            android:id="@+id/bottom_navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#efecec" />
+
+    </RelativeLayout>
+>>>>>>> parent of dbcdb43... 卡片的更新
 
 
 </RelativeLayout>
