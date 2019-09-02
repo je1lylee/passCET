@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">passCET</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <string name="title_1">Cool card</string>
     <string name="title_2">Ok card</string>
@@ -11,6 +12,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新
 </resources>

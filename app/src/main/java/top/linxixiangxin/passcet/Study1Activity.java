@@ -2,8 +2,11 @@
 package top.linxixiangxin.passcet;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.content.Intent;
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -68,13 +71,19 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
     private Button study1_bt_tianjia;
     private Boolean b_sub_square = false;
     private TextView study1_tx_yb;
+<<<<<<< HEAD
+>>>>>>> parent of dbcdb43... 卡片的更新
+=======
 >>>>>>> parent of dbcdb43... 卡片的更新
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -86,6 +95,7 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         initView();
         initEvent();
         addCard();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         radioGroup = findViewById(R.id.radioGroup);
@@ -151,6 +161,14 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         study1_tx_yb=findViewById(R.id.study1_tx_yb);
         study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
 
+=======
+
+
+        //绑定id
+
+        study1_tx_yb=findViewById(R.id.study1_tx_yb);
+        study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
+>>>>>>> parent of dbcdb43... 卡片的更新
 
 
         study1_bt_tianjia.setOnClickListener(new View.OnClickListener() {
@@ -166,6 +184,22 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
                    //设置是否被激活状态，false表示未激活
                    study1_bt_tianjia.setActivated(b_sub_square);
 
+<<<<<<< HEAD
+=======
+        study1_bt_tianjia.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!b_sub_square) {
+                   b_sub_square = true;
+                   //设置是否被激活状态，true表示被激    
+                   study1_bt_tianjia.setActivated(b_sub_square);
+                   study1_bt_tianjia.setText("已加入生词");
+               } else {
+                   b_sub_square = false;
+                   //设置是否被激活状态，false表示未激活
+                   study1_bt_tianjia.setActivated(b_sub_square);
+
+>>>>>>> parent of dbcdb43... 卡片的更新
                    study1_bt_tianjia.setText("添加到生词库");
                }
 
@@ -351,6 +385,9 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
             }
         });
         return card;
+<<<<<<< HEAD
+>>>>>>> parent of dbcdb43... 卡片的更新
+=======
 >>>>>>> parent of dbcdb43... 卡片的更新
     }
 }
