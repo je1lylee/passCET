@@ -4,20 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        tools:context="top.linxixiangxin.passcet.Study1Activity"
+    tools:context="top.linxixiangxin.passcet.Study1Activity"
+    android:background="@drawable/study1_bj"
     >
-
-<<<<<<< HEAD
-    <LinearLayout
-=======
-
-
-
-
-
-
-
-
 
     <Button
         android:id="@+id/cmg_learn_user_header"
@@ -77,14 +66,10 @@
     </RelativeLayout>
 
     <RelativeLayout
->>>>>>> parent of dbcdb43... 卡片的更新
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         <android.support.v4.view.ViewPager
             android:id="@+id/contentView"
@@ -130,25 +115,24 @@
                 android:drawableTop="@drawable/sc_1"/>
         </RadioGroup>
 
-    </LinearLayout>
-=======
-=======
->>>>>>> parent of dbcdb43... 卡片的更新
-=======
->>>>>>> parent of dbcdb43... 卡片的更新
-            <card.CardGroupView
-                android:id="@+id/card"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-    </RelativeLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="6dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="30dp"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingStart="@dimen/card_padding" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        tools:ignore="NotSibling"
-        android:layout_below="@id/t1">
+
+    </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/tb"
@@ -159,15 +143,6 @@
 
         </LinearLayout>
 
-        <com.ashokvarma.bottomnavigation.BottomNavigationBar
-            android:id="@+id/bottom_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#efecec" />
-
-    </RelativeLayout>
->>>>>>> parent of dbcdb43... 卡片的更新
-
-
 </RelativeLayout>
+
+
