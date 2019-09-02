@@ -4,113 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="top.linxixiangxin.passcet.Study1Activity"
-    android:background="@drawable/study1_bj">
+        tools:context="top.linxixiangxin.passcet.Study1Activity"
+    >
 
-    <Button
-        android:id="@+id/cmg_learn_user_header"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="15dp"
-        android:background="@drawable/zc2_tx"
-        />
-
-    <EditText
-        android:id="@+id/et__learn_search"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/bg_corners_find"
-        android:drawableRight="@drawable/study1_ss"
-        android:drawablePadding="12dp"
-        android:hint="在此输入单词"
-        android:lines="1"
-        android:paddingLeft="15dp"
-        android:textCursorDrawable="@drawable/color_cursor"
-        android:textSize="12sp"/>
-
-
-    <RelativeLayout
-        android:id="@+id/rl_learn_bg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="60dp">
-
-        <ImageButton
-            android:id="@+id/st1_imgbt"
-            android:layout_width="260dp"
-            android:layout_height="170dp"
-            android:background="@drawable/study1_ds"
-            android:layout_centerInParent="true"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="定时学习"
-            android:textColor="#ddd"
-            android:textSize="16sp"
-            android:layout_marginTop="130dp"
-            android:layout_centerHorizontal="true"/>
-
-        <Spinner
-
-            android:id="@+id/spinner"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/st1_imgbt"
-            >
-        </Spinner>
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rl_learn_bg"
-        android:id="@+id/t1"
+        android:orientation="vertical"
         >
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
+            android:id="@+id/contentView"
             android:layout_width="match_parent"
-            android:layout_height="330dp"
-            android:layout_gravity="bottom"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingBottom="30dp"
-            android:paddingEnd="@dimen/card_padding"
-            android:paddingLeft="@dimen/card_padding"
-            android:paddingRight="@dimen/card_padding"
-            android:paddingStart="@dimen/card_padding" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        tools:ignore="NotSibling"
-        >
-
-        <LinearLayout
-            android:id="@+id/tb"
+            android:layout_height="0dp"
+            android:layout_weight="12"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/homes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="学习"
+                android:textColor="#2196F3"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/xx_1"/>
+            <RadioButton
+                android:id="@+id/order"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="照相机"
+                android:textColor="#2196F3"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/zxj"/>
+            <RadioButton
+                android:id="@+id/mine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="生词"
 
-        <com.ashokvarma.bottomnavigation.BottomNavigationBar
-            android:id="@+id/bottom_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#72ed95"
-            />
-    </RelativeLayout>
+                android:textColor="#2196F3"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@drawable/sc_1"/>
+        </RadioGroup>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
