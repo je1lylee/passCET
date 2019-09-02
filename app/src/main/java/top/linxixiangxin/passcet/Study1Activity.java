@@ -3,8 +3,11 @@ package top.linxixiangxin.passcet;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.content.Intent;
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新
 import android.app.Activity;
@@ -72,6 +75,9 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
     private Boolean b_sub_square = false;
     private TextView study1_tx_yb;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of dbcdb43... 卡片的更新
+=======
 >>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新
@@ -81,7 +87,10 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         super.onCreate(savedInstanceState);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT) {
@@ -95,6 +104,7 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         initView();
         initEvent();
         addCard();
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -155,17 +165,50 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
             case R.id.mine:
                 myPager.setCurrentItem(MINE_VIEW);
 =======
+=======
+
+>>>>>>> parent of dbcdb43... 卡片的更新
 
         //绑定id
 
         study1_tx_yb=findViewById(R.id.study1_tx_yb);
         study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 
 
-        //绑定id
+        study1_bt_tianjia.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (!b_sub_square) {
+                   b_sub_square = true;
+                   //设置是否被激活状态，true表示被激    
+                   study1_bt_tianjia.setActivated(b_sub_square);
+                   study1_bt_tianjia.setText("已加入生词");
+               } else {
+                   b_sub_square = false;
+                   //设置是否被激活状态，false表示未激活
+                   study1_bt_tianjia.setActivated(b_sub_square);
 
+                   study1_bt_tianjia.setText("添加到生词库");
+               }
+
+           }
+
+        });
+
+        study1_tx_yb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Study1Activity.this,YibeiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+<<<<<<< HEAD
         study1_tx_yb=findViewById(R.id.study1_tx_yb);
         study1_bt_tianjia=findViewById(R.id.study1_bt_tianjia);
 >>>>>>> parent of dbcdb43... 卡片的更新
@@ -215,6 +258,8 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
             }
         });
 
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 
         //下拉框
         String[] ctype = new String[]{"CET_4","CET_6"};
@@ -386,6 +431,9 @@ public class Study1Activity extends Activity implements BottomNavigationBar.OnTa
         });
         return card;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of dbcdb43... 卡片的更新
+=======
 >>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新

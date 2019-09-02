@@ -16,6 +16,9 @@
 
 
 
+
+
+
     <Button
         android:id="@+id/cmg_learn_user_header"
         android:layout_width="40dp"
@@ -81,6 +84,7 @@
         >
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <android.support.v4.view.ViewPager
             android:id="@+id/contentView"
@@ -128,6 +132,8 @@
 
     </LinearLayout>
 =======
+=======
+>>>>>>> parent of dbcdb43... 卡片的更新
 =======
 >>>>>>> parent of dbcdb43... 卡片的更新
             <card.CardGroupView
