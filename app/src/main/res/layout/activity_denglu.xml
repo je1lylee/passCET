@@ -28,9 +28,11 @@
             android:textColorHint="#ffffff"
             android:textSize="15sp"
             android:layout_gravity="center"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            android:singleLine="true"/>
 
         <top.linxixiangxin.passcet.CountDownTimerButton
+            android:id="@+id/DL_BT_yanzheng"
             android:layout_width="105dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -38,7 +40,8 @@
             android:text="获取验证码"
             android:textSize="14sp"
             android:textColor="#ffff"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -52,7 +55,7 @@
         android:background="@drawable/yuanjiaoshurukuang">
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/DL_password"
             android:layout_below="@id/a1"
             android:layout_height="50dp"
             android:layout_width="270dp"
