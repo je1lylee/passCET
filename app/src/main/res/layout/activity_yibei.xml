@@ -9,7 +9,8 @@
     android:divider="?android:attr/dividerVertical"
     android:showDividers="beginning"
     android:dividerPadding="2dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+   >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -99,19 +100,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal">
-
-
         </LinearLayout>
-
-        <com.ashokvarma.bottomnavigation.BottomNavigationBar
-            android:id="@+id/bottom_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#efecec" />
-
     </RelativeLayout>
-
-
-
 </LinearLayout>

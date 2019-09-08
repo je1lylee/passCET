@@ -65,84 +65,89 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/contentView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="12"/>
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/homes"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="学习"
-                android:textColor="#2196F3"
-                android:button="@null"
-                android:gravity="center"
-                android:drawableTop="@drawable/xx_1"/>
-            <RadioButton
-                android:id="@+id/order"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="照相机"
-                android:textColor="#2196F3"
-                android:button="@null"
-                android:gravity="center"
-                android:drawableTop="@mipmap/zxj"/>
-            <RadioButton
-                android:id="@+id/mine"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="生词"
-
-                android:textColor="#2196F3"
-                android:button="@null"
-                android:gravity="center"
-                android:drawableTop="@drawable/sc_1"/>
-        </RadioGroup>
-
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="330dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="6dp"
+            android:layout_marginTop="250dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingBottom="30dp"
-            android:paddingEnd="@dimen/card_padding"
             android:paddingLeft="@dimen/card_padding"
             android:paddingRight="@dimen/card_padding"
             android:paddingStart="@dimen/card_padding" />
 
 
-    </RelativeLayout>
-
         <LinearLayout
-            android:id="@+id/tb"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="horizontal">
+            android:layout_below="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            >
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/xx_1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="学习"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:background="@mipmap/zxj"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/sc_1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="生词"
+                   />
+            </LinearLayout>
 
         </LinearLayout>
 
-</RelativeLayout>
+    </RelativeLayout>
 
 
