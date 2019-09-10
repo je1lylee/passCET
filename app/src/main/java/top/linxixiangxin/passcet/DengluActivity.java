@@ -66,7 +66,7 @@ public class DengluActivity extends AppCompatActivity {
                 sendRequestPost(url,email);
                 Intent intent = new Intent(DengluActivity.this, Study1Activity.class);
                 startActivity(intent);
-                Toast.makeText(DengluActivity.this, "欢迎来到绝望世界!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DengluActivity.this, "欢迎使用PassCET!", Toast.LENGTH_LONG).show();
             }
 
 
@@ -80,22 +80,20 @@ public class DengluActivity extends AppCompatActivity {
         btn_yanzheng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 sendRequestWithHttpURLConnection();
                 Log.d(TAG, "asd");
             }
 
-
             private Handler handler = new Handler() {
-
             };
-
 
             private void sendRequestWithHttpURLConnection() {
                 //开启线程来发起网络请求
                 new Thread() {
                     @Override
                     public void run() {
+                        email = ed_email.getText().toString();
+                        Log.d(TAG, "email:" + email);
                         OkHttpClient okHttpClient = new OkHttpClient();
                         RequestBody requestBody = new FormBody.Builder()
                                 .add("type", "0")

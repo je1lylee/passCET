@@ -4,34 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="top.linxixiangxin.passcet.Study1Activity"
     android:background="@drawable/study1_bj"
-    >
+    tools:context="top.linxixiangxin.passcet.Study1Activity">
 
     <Button
-        android:id="@+id/cmg_learn_user_header"
+        android:id="@+id/btn_stu1_tx"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="15dp"
-        android:background="@drawable/zc2_tx"
-        />
+        android:layout_marginTop="30dp"
+        android:background="@drawable/zc2_tx" />
 
     <EditText
         android:id="@+id/et__learn_search"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg_corners_find"
-        android:drawableRight="@drawable/study1_ss"
         android:drawablePadding="12dp"
+        android:drawableRight="@drawable/study1_ss"
         android:hint="在此输入单词"
         android:lines="1"
         android:paddingLeft="15dp"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
+
     <RelativeLayout
         android:id="@+id/rl_learn_bg"
         android:layout_width="match_parent"
@@ -40,114 +39,111 @@
         android:layout_marginTop="60dp">
 
         <ImageButton
-            android:id="@+id/st1_imgbt"
+            android:id="@+id/st1_imgbt_time"
             android:layout_width="260dp"
             android:layout_height="170dp"
-            android:background="@drawable/study1_ds"
             android:layout_centerInParent="true"
-            />
+            android:background="@drawable/study1_ds" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
             android:text="定时学习"
             android:textColor="#ddd"
-            android:textSize="16sp"
-            android:layout_marginTop="130dp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="16sp" />
 
         <Spinner
+            android:id="@+id/spinner"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:layout_below="@id/st1_imgbt"
-            >
-        </Spinner>
+            android:layout_below="@id/st1_imgbt_time"></Spinner>
 
     </RelativeLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="250dp"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingLeft="@dimen/card_padding"
-            android:paddingRight="@dimen/card_padding"
-            android:paddingStart="@dimen/card_padding" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="250dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/card_padding"
+        android:paddingRight="@dimen/card_padding"
+        android:paddingStart="@dimen/card_padding" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
 
         <LinearLayout
-            android:layout_below="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="horizontal"
-            >
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <Button
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/xx_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-
-                <Button
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/xx_1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="学习"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="3"
-                    android:background="@mipmap/zxj"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-
-                <Button
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/sc_1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="生词"
-                   />
-            </LinearLayout>
-
+                android:text="学习" />
         </LinearLayout>
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_stu1_zxj"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:background="@mipmap/zxj"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_study1_sc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/sc_1"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="生词" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
 
 

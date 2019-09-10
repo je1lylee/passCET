@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="top.linxixiangxin.passcet.ShengciActivity"
-    android:gravity="center"
+    android:background="#9FA6E5"
     android:divider="?android:attr/dividerVertical"
-    android:showDividers="beginning"
     android:dividerPadding="2dp"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:showDividers="beginning"
+    tools:context="top.linxixiangxin.passcet.ShengciActivity">
 
     <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -25,7 +28,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/et__learn_search"
@@ -42,7 +45,6 @@
                 android:textSize="12sp" />
 
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -53,28 +55,20 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1" />
 
             <Spinner
                 android:id="@+id/shengci_choose"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                >
-            </Spinner>
+                android:layout_weight="1"></Spinner>
 
             <Spinner
                 android:id="@+id/shengci_paixu"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                >
-
-            </Spinner>
-
-
+                android:layout_weight="1"></Spinner>
         </LinearLayout>
-
     </LinearLayout>
 
     <ListView
@@ -83,36 +77,76 @@
         android:layout_height="0dp"
         android:layout_weight="5"
         android:dividerHeight="20dp"
-        />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        tools:ignore="NotSibling"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#fcfcfc"
         >
 
         <LinearLayout
-            android:id="@+id/tb"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
+            <Button
+                android:id="@+id/btn_sc_xx"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/xx_1" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="学习" />
         </LinearLayout>
 
-        <com.ashokvarma.bottomnavigation.BottomNavigationBar
-            android:id="@+id/bottom_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#efecec" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btn_sc_zxj"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:background="@mipmap/zxj"
+                android:gravity="center"
+                />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/btn_study1_sc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/sc_1"
+                android:layout_marginTop="10dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="生词" />
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

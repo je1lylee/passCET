@@ -1,8 +1,10 @@
 package top.linxixiangxin.passcet;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -46,11 +48,14 @@ public class Zhuce1Activity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onClick(View v) {
                 new Thread() {
+                    @SuppressLint("HandlerLeak")
                     @Override
                     public void run() {
+                        Looper.prepare();//增加部分
                         queren = new Handler() {
                             @Override
                             public void handleMessage(Message msg) {
+
                                 switch (msg.what) {
                                     case 0:
                                         Log.d(TAG, "正确");
@@ -76,6 +81,9 @@ public class Zhuce1Activity extends AppCompatActivity implements View.OnClickLis
                             Log.d(TAG, "responseData: " + responseData);
                             if (response.isSuccessful()) {
                                 message.what = 0;
+                                Intent intent = new Intent(Zhuce1Activity.this, Zhuce2Activity.class);
+                                intent.putExtra("email", edit_zc1_mail.getText().toString());
+                                startActivity(intent);
 
                             }
                         } catch (IOException e) {
@@ -85,7 +93,9 @@ public class Zhuce1Activity extends AppCompatActivity implements View.OnClickLis
                         queren.sendMessage(message);
                     }
                 }.start();
+                Looper.loop();//增加部分
             }
+
         });
 
 

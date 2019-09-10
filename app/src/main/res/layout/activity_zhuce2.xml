@@ -36,12 +36,13 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_zc2_tx"
+        <ImageView
+            android:id="@+id/IM_zc2_tx"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="center"
-            android:background="@drawable/zc2_tx"
+            android:text="点击上传头像"
+            android:background="@drawable/zxj"
             />
 
         <EditText
