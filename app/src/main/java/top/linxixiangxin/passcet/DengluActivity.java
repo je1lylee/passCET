@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +30,33 @@ public class DengluActivity extends AppCompatActivity {
     private String email;
     private EditText ed_password;
     private static final String TAG = "DengluActivity";
-    public  String id;
+    public  String id, code;
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+                Log.d(TAG, "message.what: " + msg.what);
+            switch (msg.what) {
+                case 107:
+                    Intent intent = new Intent(DengluActivity.this, Study1Activity.class);
+                    startActivity(intent);
+                    Toast.makeText(DengluActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                    finish();
+                    break;
+                case 105:
+                    Toast.makeText(DengluActivity.this, "验证码获取成功", Toast.LENGTH_SHORT).show();
+                    break;
+                case 209:
+                    Toast.makeText(DengluActivity.this, "验证码不存在", Toast.LENGTH_SHORT).show();
+                    break;
+                case 205:
+                    Toast.makeText(DengluActivity.this, "用户不存在", Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    Toast.makeText(DengluActivity.this, "获取失败，请重试！", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };;
 
 
 
@@ -62,15 +89,9 @@ public class DengluActivity extends AppCompatActivity {
         btn_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = null;
-                sendRequestPost(url,email);
-                Intent intent = new Intent(DengluActivity.this, Study1Activity.class);
-                startActivity(intent);
-                Toast.makeText(DengluActivity.this, "欢迎使用PassCET!", Toast.LENGTH_LONG).show();
-            }
+                getUsreHead("SMvwlN1kjrtKzIfxCLHlejDedpVSTRvW", id, "http://112.74.184.181:8000/getusericon/");
+                sendRequestWithHttpURLConnection("1");
 
-
-            public void sendRequestPost(final String url,final String email){
 
             }
         });
@@ -80,49 +101,124 @@ public class DengluActivity extends AppCompatActivity {
         btn_yanzheng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendRequestWithHttpURLConnection();
-                Log.d(TAG, "asd");
-            }
-
-            private Handler handler = new Handler() {
-            };
-
-            private void sendRequestWithHttpURLConnection() {
-                //开启线程来发起网络请求
-                new Thread() {
-                    @Override
-                    public void run() {
-                        email = ed_email.getText().toString();
-                        Log.d(TAG, "email:" + email);
-                        OkHttpClient okHttpClient = new OkHttpClient();
-                        RequestBody requestBody = new FormBody.Builder()
-                                .add("type", "0")
-                                .add("token", "SMvwlN1kjrtKzIfxCLHlejDedpVSTRvW")
-                                .add("email", email)
-                                .build();
-                        Request request = new Request.Builder()
-                                .url("http://112.74.184.181:8000/login/")
-                                .post(requestBody)
-                                .build();
-
-                        try {
-                            Response response = okHttpClient.newCall(request).execute();
-                            String responseData = response.body().string();
-                            Log.d(TAG, "responseData: " + responseData);
-                            if (response.isSuccessful()) {
-                                JSONObject jsonObject = new JSONObject(responseData);
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }.start();
+                sendRequestWithHttpURLConnection("0");
             }
 
         });
+
+    }
+    public static void getUsreHead (final String token, final String id, final String url){
+        Log.d(TAG, "getUsreHead: ");
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    OkHttpClient okHttpClient =new OkHttpClient();
+                    RequestBody requestBody = new FormBody.Builder()
+                            .add("token", token)
+                            .add("id", id)
+                            .build();
+                    Request request = new Request.Builder()
+                            .post(requestBody)
+                            .url(url)
+                            .build();
+                    Response response = okHttpClient.newCall(request).execute();
+                    String data = response.body().string();
+                    Log.d(TAG, "data: " + data);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
+
+    private void sendRequestWithHttpURLConnection(final String type) {
+        //开启线程来发起网络请求
+        new Thread() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                email = ed_email.getText().toString();
+                OkHttpClient okHttpClient = new OkHttpClient();
+                RequestBody requestBody = null;
+                RequestBody requestBody1 = null;
+                Request request = null;
+                Request request1 = null;
+                try {
+                    if (type.equals("0")) {
+                        requestBody = new FormBody.Builder()
+                                .add("type", type)
+                                .add("token", "SMvwlN1kjrtKzIfxCLHlejDedpVSTRvW")
+                                .add("email", email)
+                                .build();
+                    } else if (type.equals("1")) {
+                        requestBody = new FormBody.Builder()
+                                .add("type", type)
+                                .add("token", "SMvwlN1kjrtKzIfxCLHlejDedpVSTRvW")
+                                .add("id", id)
+                                .add("code", ed_password.getText().toString())
+                                .build();
+                        requestBody1 = new FormBody.Builder()
+                                .add("token", "SMvwlN1kjrtKzIfxCLHlejDedpVSTRvW")
+                                .add("email", ed_email.getText().toString())
+                                .build();
+                        request1 = new Request.Builder()
+                                .url("http://112.74.184.181:8000/getuserinfo/")
+                                .post(requestBody1)
+                                .build();
+                        Response response1 = okHttpClient.newCall(request1).execute();
+                        String data = response1.body().string();
+                        Log.d(TAG, "data: " + data);
+                    }
+                    request = new Request.Builder()
+                            .url("http://112.74.184.181:8000/login/")
+                            .post(requestBody)
+                            .build();
+                    Response response = okHttpClient.newCall(request).execute();
+                    String responseData = response.body().string();
+                    Log.d(TAG, "responseData: " + responseData);
+                    if (response.isSuccessful()) {
+                        if (type.equals("0")) {
+                            JSONObject jsonObject = new JSONObject(responseData);
+                            id = jsonObject.getString("id");
+                            message.what = 105;
+                        } else if (type.equals("1")) {
+                            message.what = 107;
+                        }
+
+                    }
+                } catch(NullPointerException n){
+                    message.what = 209;
+                    Log.d(TAG, "NullPointerException: ");
+                    n.printStackTrace();
+                } catch(IllegalArgumentException i) {
+                    Log.d(TAG, "run: ");
+                    message.what = 209;
+                    i.printStackTrace();
+                } catch (IOException e) {
+                    Log.d(TAG, "run: ");
+                    message.what = 0;
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    Log.d(TAG, "JSONException: ");
+                    message.what = 205;
+                    e.printStackTrace();
+                }
+                handler.sendMessage(message);
+            }
+        }.start();
+
     }
 }
 
+class UserInternet {
 
+    private static final String TAG = "UserInternet";
+    private UserInformation userInformation;
+
+    public UserInternet (){
+        userInformation = new UserInformation();
+    }
+
+
+}

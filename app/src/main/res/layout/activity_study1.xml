@@ -24,7 +24,6 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/bg_corners_find"
         android:drawablePadding="12dp"
-        android:drawableRight="@drawable/study1_ss"
         android:hint="在此输入单词"
         android:lines="1"
         android:paddingLeft="15dp"
@@ -80,8 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"

@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Message;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -84,13 +86,27 @@ public class Zhuce2Activity extends AppCompatActivity {
             public void onClick(View v) {
 //                Intent intent = new Intent(Zhuce2Activity.this,Study1Activity.class);
 //                startActivity(intent);
-                Handler handler = new Handler() {
+                final Handler handler = new Handler() {
 
+                    @Override
+                    public void handleMessage(Message msg) {
+                        Intent intent;
+                        switch (msg.what) {
+                            case 1:
+                                intent = new Intent(Zhuce2Activity.this, Study1Activity.class);
+                                startActivity(intent);
+                                break;
+                            case 0:
+                                Toast.makeText(Zhuce2Activity.this, "失败", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    }
                 };
                 new Thread() {
                     @Override
                     public void run() {
 
+                        Message message = new Message();
                         File file=new File(Environment.getExternalStorageDirectory(), "take_photo_image.jpg");
                         MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
                         RequestBody filebody = MultipartBody.create(MEDIA_TYPE_PNG, file);
@@ -131,9 +147,16 @@ public class Zhuce2Activity extends AppCompatActivity {
                             Response response = okHttpClient.newCall(request).execute();
                             String responseData = response.body().string();
                             Log.d(TAG, "responseData132: " + responseData);
+                            if (response.isSuccessful()) {
+                                message.what = 1;
+                            } else {
+                                message.what = 0;
+                            }
                         } catch (IOException e) {
+                            message.what = 0;
                             e.printStackTrace();
                         }
+                        handler.sendMessage(message);
 
                     }
                 }.start();

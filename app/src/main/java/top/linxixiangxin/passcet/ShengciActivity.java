@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -36,6 +37,8 @@ public class ShengciActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shengci);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
 
         friendsList = (ListView) findViewById(R.id.lv_show);
         datas=getFriendItems();
@@ -62,9 +65,6 @@ public class ShengciActivity extends Activity {
             }
         });
 
-
-
-
         //下拉框1
         String[] ctype4 = new String[]{"CET_4", "CET_6"};
         ArrayAdapter <String> adapter4 = new ArrayAdapter <String>(this, android.R.layout.simple_spinner_item, ctype4);  //创建一个数组适配器
@@ -78,8 +78,6 @@ public class ShengciActivity extends Activity {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
         Spinner spinner3 = super.findViewById(R.id.shengci_paixu);
         spinner3.setAdapter(adapter3);
-
-
     }
 
 

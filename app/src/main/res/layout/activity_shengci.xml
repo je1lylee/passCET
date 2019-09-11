@@ -1,91 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#9FA6E5"
     android:divider="?android:attr/dividerVertical"
     android:dividerPadding="2dp"
     android:gravity="center"
-    android:orientation="vertical"
     android:showDividers="beginning"
-    tools:context="top.linxixiangxin.passcet.ShengciActivity">
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <LinearLayout
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-
         <LinearLayout
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/et__learn_search"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/bg_corners_find"
-                android:drawablePadding="12dp"
-                android:drawableRight="@drawable/study1_ss"
-                android:hint="在此输入单词"
-                android:lines="1"
-                android:paddingLeft="15dp"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:textSize="12sp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/et__learn_search"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_corners_find"
+                    android:drawablePadding="12dp"
+                    android:hint="在此输入单词"
+                    android:lines="1"
+                    android:paddingLeft="15dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="12sp"
+                    />
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/shengci_choose"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></Spinner>
+
+                <Spinner
+                    android:id="@+id/shengci_paixu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                </Spinner>
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/lv_show"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Spinner
-                android:id="@+id/shengci_choose"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"></Spinner>
-
-            <Spinner
-                android:id="@+id/shengci_paixu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"></Spinner>
-        </LinearLayout>
+            android:layout_weight="5"
+            android:dividerHeight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_show"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        android:dividerHeight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#fcfcfc"
+        android:layout_alignParentBottom="true"
         >
 
         <LinearLayout
@@ -149,4 +155,7 @@
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+
+
+</RelativeLayout>
+
